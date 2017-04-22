@@ -1,4 +1,4 @@
-# Deployment
+# Deploy
 
 ## bosh-lite
 
@@ -29,4 +29,18 @@ Deploy!
 
 ```shell
 bosh deploy --vars-file manifest/vars-lite.yml manifest/deployment.yml
+```
+
+# Test
+
+Tests are run in docker. Build the test image with:
+
+```shell
+docker build -t mongodb-service-release .
+```
+
+Then run tests with:
+
+```shell
+./scripts/docker-test.sh
 ```
