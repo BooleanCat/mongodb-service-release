@@ -1,0 +1,7 @@
+---
+mongodb_vm_type: default
+mongodb_networks:
+- name: default
+mongodb_azs: [default]
+mongodb_vm_type: default
+mongodb_persistent_disk_type: default

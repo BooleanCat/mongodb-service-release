@@ -1,0 +1,29 @@
+---
+name: mongodb-service
+
+instance_groups:
+- name: mongodb
+  instances: 1
+  jobs:
+  - name: mongodb
+    release: mongodb-service
+  vm_type: ((mongodb_vm_type))
+  persistent_disk_type: ((mongodb_persistent_disk_type))
+  networks: ((mongodb_networks))
+  azs: ((mongodb_azs))
+  stemcell: default
+
+releases:
+- name: mongodb-service
+  version: latest
+
+stemcells:
+- alias: default
+  os: ubuntu-trusty
+  version: "3363.19"
+
+update:
+  canaries: 1
+  canary_watch_time: 30000-180000
+  max_in_flight: 6
+  update_watch_time: 30000-180000

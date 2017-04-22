@@ -1,0 +1,8 @@
+---
+name: mongodb
+templates:
+  pre-start: bin/pre-start
+  config.yml: config/config.yml
+packages:
+- mongodb
+properties: {}

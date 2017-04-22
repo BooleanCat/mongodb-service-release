@@ -1,0 +1,6 @@
+systemLog:
+   destination: file
+   path: /var/vcap/sys/log/mongodb/mongod.log
+   logAppend: true
+storage:
+  dbPath: /var/vcap/store/mongodb
