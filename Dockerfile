@@ -1,12 +1,11 @@
 from ubuntu:trusty
 
-RUN echo "deb http://archive.ubuntu.com/ubuntu/ trusty-backports restricted main universe" >> /etc/apt/sources.list
-RUN apt-get update && apt-get install -y git shellcheck
+# add bats PPA
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D16DD0BD5F28EA3F
+RUN echo "deb http://ppa.launchpad.net/duggan/bats/ubuntu trusty main" >> /etc/apt/sources.list
 
-# install bats
-RUN git clone https://github.com/sstephenson/bats.git
-RUN cd bats && ./install.sh /usr/local
-RUN rm -rf bats
+RUN echo "deb http://archive.ubuntu.com/ubuntu/ trusty-backports restricted main universe" >> /etc/apt/sources.list
+RUN apt-get update && apt-get install -y bats shellcheck
 
 # create vcap user
 RUN useradd -ms /bin/bash vcap

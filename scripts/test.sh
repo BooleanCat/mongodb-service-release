@@ -2,7 +2,7 @@
 set -e
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-PROJECT_ROOT="$( dirname "${DIR}" )"
+PROJECT_ROOT="$( dirname "$DIR" )"
 
 shellcheck "${PROJECT_ROOT}/jobs/mongodb/templates/pre-start"
 
