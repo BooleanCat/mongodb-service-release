@@ -1,0 +1,4 @@
+---
+name: bash-utils
+files:
+- bash-utils/utils.sh

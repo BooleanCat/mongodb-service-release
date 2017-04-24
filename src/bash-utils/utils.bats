@@ -1,20 +1,10 @@
 #!/usr/bin/env bats
 
-PROJECT_ROOT=${PROJECT_ROOT:-"../../.."}
-
-source "${PROJECT_ROOT}/jobs/mongodb/templates/pre-start"
+source "./utils.sh"
 
 setup() {
   test_dir="$( mktemp -d )"
   [ "$( owner_and_group "$test_dir" )" = "root:root" ]
-}
-
-@test "LOG_DIR is correct" {
-  [ "$LOG_DIR" = "/var/vcap/sys/log/mongodb" ]
-}
-
-@test "DB_DIR is correct" {
-  [ "$DB_DIR" = "/var/vcap/store/mongodb" ]
 }
 
 @test "ensure_dir" {

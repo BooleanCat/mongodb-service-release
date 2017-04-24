@@ -4,3 +4,5 @@ systemLog:
    logAppend: true
 storage:
   dbPath: /var/vcap/store/mongodb
+processManagement:
+  pidFilePath: /var/vcap/sys/run/mongodb/mongod.pid

@@ -1,0 +1,4 @@
+check process mongodb
+  with pidfile /var/vcap/sys/run/mongodb/mongod.pid
+  start program /var/vcap/jobs/mongodb/bin/start
+  stop program /var/vcap/jobs/mongodb/bin/stop

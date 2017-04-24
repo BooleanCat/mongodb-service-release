@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -e
+
+mkdir -p "${BOSH_INSTALL_TARGET}/bin"
+cp bash-utils/utils.sh "${BOSH_INSTALL_TARGET}/bin/utils.sh"

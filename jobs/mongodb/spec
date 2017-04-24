@@ -1,8 +1,11 @@
 ---
 name: mongodb
 templates:
-  pre-start: bin/pre-start
+  start: bin/start
+  stop: bin/stop
+  envs: config/envs
   config.yml: config/config.yml
 packages:
 - mongodb
+- bash-utils
 properties: {}

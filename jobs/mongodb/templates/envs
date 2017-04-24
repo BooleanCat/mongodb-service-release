@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+export LOG_DIR=/var/vcap/sys/log/mongodb
+export DB_DIR=/var/vcap/store/mongodb
+export PIDFILE_DIR=/var/vcap/sys/run/mongodb
+export MONGOD_PATH=/var/vcap/packages/mongodb/bin/mongod
+export CONFIG_PATH=/var/vcap/jobs/mongodb/config/config.yml
+export UTILS_PATH=/var/vcap/packages/bash-utils/bin/utils.sh
