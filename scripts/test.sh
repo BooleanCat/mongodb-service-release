@@ -11,4 +11,3 @@ fi
 
 "${PROJECT_ROOT}/src/bash-utils/test.sh"
 "${PROJECT_ROOT}/src/unit-tests/test.sh"
-"${PROJECT_ROOT}/src/system-tests/test.sh"
