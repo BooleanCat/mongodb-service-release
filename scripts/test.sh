@@ -5,7 +5,8 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 PROJECT_ROOT="$( dirname "$DIR" )"
 
 if [ "$DOCKER_ACTIVE" != "true" ]; then
-  echo "Run ./scripts/docker-test.sh" >&2
+  echo "Yikes - don't run this script directly!" >&2
+  echo "Use ./scripts/docker-test.sh instead." >&2
   exit 1
 fi
 
