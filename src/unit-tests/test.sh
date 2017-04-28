@@ -8,6 +8,8 @@ pushd "$DIR" >/dev/null
   bats .
 popd >/dev/null
 
-shellcheck "${PROJECT_ROOT}/jobs/mongodb/templates/start"
-shellcheck "${PROJECT_ROOT}/jobs/mongodb/templates/stop"
-shellcheck "${PROJECT_ROOT}/jobs/mongodb/templates/envs"
+pushd "${PROJECT_ROOT}/jobs/mongodb/templates" >/dev/null
+  shellcheck start
+  shellcheck stop
+  shellcheck envs
+popd >/dev/null
