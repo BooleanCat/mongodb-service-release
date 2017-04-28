@@ -9,5 +9,7 @@ if [ "$DOCKER_ACTIVE" != "true" ]; then
   exit 1
 fi
 
-"${PROJECT_ROOT}/src/bash-utils/test.sh"
-"${PROJECT_ROOT}/src/unit-tests/test.sh"
+pushd "$PROJECT_ROOT" >/dev/null
+  ./src/bash-utils/test.sh
+  ./src/unit-tests/test.sh
+popd >/dev/null

@@ -2,7 +2,7 @@
 
 ## bosh-lite
 
-Configure `.envrc` bosh envs or set them manually, example `.envrc`:
+Configure `.envrc` bosh envs, example `.envrc`:
 
 ```shell
 export BOSH_ENVIRONMENT=http://192.168.50.4:25555
@@ -36,7 +36,7 @@ bosh deploy --vars-file manifest/vars-lite.yml manifest/deployment.yml
 Tests are run in docker. Build the test image with:
 
 ```shell
-docker build -t mongodb-service-release .
+./scripts/docker-build.sh
 ```
 
 Then run tests with:
