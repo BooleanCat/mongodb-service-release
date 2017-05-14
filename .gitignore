@@ -3,3 +3,4 @@ config/private.yml
 blobs/
 dev_releases/
 .dev_builds/
+secrets/*
