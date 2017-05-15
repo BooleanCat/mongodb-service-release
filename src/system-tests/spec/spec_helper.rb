@@ -97,4 +97,31 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+  config.before(:suite) {
+    check_bosh_envs
+    check_bosh_gateway_envs
+  }
+end
+
+def check_bosh_envs
+  envs = ['BOSH_ENVIRONMENT', 'BOSH_CA_CERT', 'BOSH_CLIENT', 'BOSH_CLIENT_SECRET', 'BOSH_DEPLOYMENT']
+  failure_message = 'configure BOSH envs in `.envrc` or manually'
+
+  envs.each do |env|
+    expect(ENV[env]).not_to be_empty, failure_message
+  end
+end
+
+def check_bosh_gateway_envs
+  if !ENV['BOSH_GW_HOST'].empty? or !ENV['BOSH_GW_USER'].empty? or !ENV['BOSH_GW_PRIVATE_KEY'].empty?
+    failure_message = 'set all of BOSH_GW_HOST, BOSH_GW_USER, BOSH_GW_PRIVATE_KEY to configure a gateway'
+
+    expect(ENV['BOSH_GW_HOST']).not_to be_empty, failure_message
+    expect(ENV['BOSH_GW_USER']).not_to be_empty, failure_message
+    expect(ENV['BOSH_GW_PRIVATE_KEY']).not_to be_empty, failure_message
+
+    @gateway_configured = true
+  else
+    @gateway_configured = false
+  end
 end
