@@ -1,0 +1,20 @@
+name: mongodb-service
+version: "1"
+commit_hash: 94fcdf2
+uncommitted_changes: false
+jobs:
+- name: mongodb
+  version: 215d5345cbd529fbb13ac7961635f2cf5f207d6c
+  fingerprint: 215d5345cbd529fbb13ac7961635f2cf5f207d6c
+  sha1: eb63a3a66f1621c354d1d32b7f41e71a786a056a
+packages:
+- name: bash-utils
+  version: ac0b9ce4122379a4f390809833061356eff79327
+  fingerprint: ac0b9ce4122379a4f390809833061356eff79327
+  sha1: 87557ba97b5fddbf4cff2a0236ec94724ac8feac
+  dependencies: []
+- name: mongodb
+  version: 1167670c696a7b619082663bb04ac560ff0420d0
+  fingerprint: 1167670c696a7b619082663bb04ac560ff0420d0
+  sha1: 5b308027dc44fd4248e8d3a52635d690b1f06564
+  dependencies: []
