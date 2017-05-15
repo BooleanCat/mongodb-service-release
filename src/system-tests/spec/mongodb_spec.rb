@@ -23,18 +23,12 @@ describe 'mongodb' do
   }
 
   let(:host) {
-    if @gateway_configured
-      return '127.0.0.1'
-    end
-
+    return '127.0.0.1' if @gateway_configured
     private_host
   }
 
   let(:port) {
-    if @gateway_configured
-      return gateway.open(private_host, MONGODB_DEFAULT_PORT)
-    end
-
+    return gateway.open(private_host, MONGODB_DEFAULT_PORT) if @gateway_configured
     MONGODB_DEFAULT_PORT
   }
 
