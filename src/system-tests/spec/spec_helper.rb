@@ -25,15 +25,17 @@ def check_bosh_envs
 end
 
 def check_bosh_gateway_envs
-  if !ENV['BOSH_GW_HOST'].empty? or !ENV['BOSH_GW_USER'].empty? or !ENV['BOSH_GW_PRIVATE_KEY'].empty?
+  if gateway_configured?
     failure_message = 'set all of BOSH_GW_HOST, BOSH_GW_USER, BOSH_GW_PRIVATE_KEY to configure a gateway'
 
     expect(ENV['BOSH_GW_HOST']).not_to be_empty, failure_message
     expect(ENV['BOSH_GW_USER']).not_to be_empty, failure_message
     expect(ENV['BOSH_GW_PRIVATE_KEY']).not_to be_empty, failure_message
-
-    @gateway_configured = true
-  else
-    @gateway_configured = false
   end
+end
+
+def gateway_configured?
+  !ENV['BOSH_GW_HOST'].empty? \
+  or !ENV['BOSH_GW_USER'].empty? \
+  or !ENV['BOSH_GW_PRIVATE_KEY'].empty?
 end
