@@ -9,7 +9,8 @@ pushd "$DIR" >/dev/null
 popd >/dev/null
 
 pushd "${PROJECT_ROOT}/jobs/mongodb/templates" >/dev/null
-  shellcheck start
-  shellcheck stop
-  shellcheck envs
+  shellcheck -e 1091 pre-start
+  shellcheck -e 1091 start
+  shellcheck -e 1091 stop
+  shellcheck -e 1091 envs
 popd >/dev/null

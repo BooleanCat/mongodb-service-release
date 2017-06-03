@@ -15,4 +15,4 @@ pushd "$PROJECT_ROOT" >/dev/null
   ./src/unit-tests/test.sh
 popd >/dev/null
 
-busted "$PROJECT_ROOT/src/system-tests/"
+busted -v "$PROJECT_ROOT/src/system-tests/"
