@@ -22,7 +22,7 @@ ENV HOME /home/test
 WORKDIR $HOME
 
 # install BOSH CLI
-RUN curl -o /usr/local/bin/bosh -s https://s3.amazonaws.com/bosh-cli-artifacts/bosh-cli-2.0.16-linux-amd64
+RUN curl -o /usr/local/bin/bosh -s https://s3.amazonaws.com/bosh-cli-artifacts/bosh-cli-2.0.22-linux-amd64
 RUN chmod +rx /usr/local/bin/bosh
 
 # install rocks
