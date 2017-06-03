@@ -1,12 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-source /var/vcap/packages/bash-utils/bin/utils.sh
 source /var/vcap/jobs/mongodb/config/envs
-
-ensure_dir "$LOG_DIR" vcap:vcap
-ensure_dir "$DB_DIR" vcap:vcap
-ensure_dir "$PIDFILE_DIR" vcap:vcap
 
 /sbin/start-stop-daemon \
   --pidfile "${PIDFILE_DIR}/mongod.pid" \
