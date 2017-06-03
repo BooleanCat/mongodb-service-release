@@ -27,6 +27,12 @@ describe('deployment', function()
       local found = string.find(output, 'MongoDB starting')
       assert.is_not_nil(found)
     end)
+
+    it('disables transparent_hugepage', function()
+      local output = mongodb_ssh:exec('cat /var/vcap/sys/log/mongodb/mongod.log')
+      local found = string.find(output, 'WARNING: /sys/kernel/mm/transparent_hugepage')
+      assert.is_nil(found)
+    end)
   end)
 end)
 
