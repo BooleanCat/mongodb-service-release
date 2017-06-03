@@ -26,6 +26,7 @@ RUN curl -o /usr/local/bin/bosh -s https://s3.amazonaws.com/bosh-cli-artifacts/b
 RUN chmod +rx /usr/local/bin/bosh
 
 # install rocks
+RUN luarocks install moonscript
 RUN luarocks install busted
 RUN luarocks install mongorover
 RUN luarocks install lua-cjson

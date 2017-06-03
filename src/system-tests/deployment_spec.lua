@@ -1,10 +1,11 @@
-json = require('cjson')
-mongorover = require('mongorover')
-require('bosh')
+local moonscript = require "moonscript"
+local json = require('cjson')
+local mongorover = require('mongorover')
+local bosh = require('bosh')
 
 describe('deployment', function()
   setup(function()
-    mongodb_ssh = BoshSSH:new('mongodb', 0)
+    mongodb_ssh = bosh.BoshSSH('mongodb', 0)
     address = string.format('mongodb://%s:27017', get_deployment_ip())
   end)
 
