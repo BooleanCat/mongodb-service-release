@@ -14,7 +14,3 @@ pushd "$PROJECT_ROOT" >/dev/null
   ./src/bash-utils/test.sh
   ./src/unit-tests/test.sh
 popd >/dev/null
-
-pushd "${PROJECT_ROOT}/src/system-tests" >/dev/null
-  rspec .
-popd >/dev/null
