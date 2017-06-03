@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y \
   bats \
   shellcheck \
   curl \
+  ssh \
   lua5.2 \
   liblua5.2-dev \
   luarocks \
