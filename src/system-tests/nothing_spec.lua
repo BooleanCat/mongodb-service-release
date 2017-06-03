@@ -1,0 +1,5 @@
+describe('nothing', function ()
+  it('tests nothing', function()
+    assert.is_true(true)
+  end)
+end)

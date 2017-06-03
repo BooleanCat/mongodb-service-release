@@ -14,3 +14,5 @@ pushd "$PROJECT_ROOT" >/dev/null
   ./src/bash-utils/test.sh
   ./src/unit-tests/test.sh
 popd >/dev/null
+
+busted "$PROJECT_ROOT/src/system-tests/"
