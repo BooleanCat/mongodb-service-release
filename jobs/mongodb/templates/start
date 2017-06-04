@@ -3,6 +3,8 @@ set -e
 
 source /var/vcap/jobs/mongodb/config/envs
 
+ulimit -u 32768
+
 /sbin/start-stop-daemon \
   --pidfile "${PIDFILE_DIR}/mongod.pid" \
   --chuid vcap:vcap \

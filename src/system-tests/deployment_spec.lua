@@ -33,6 +33,12 @@ describe('deployment', function()
       local found = string.find(output, 'WARNING: /sys/kernel/mm/transparent_hugepage')
       assert.is_nil(found)
     end)
+
+    it('considers soft limits sufficiently high', function()
+      local output = mongodb_ssh:exec('cat /var/vcap/sys/log/mongodb/mongod.log')
+      local found = string.find(output, 'WARNING: soft rlimits too low.')
+      assert.is_nil(found)
+    end)
   end)
 end)
 
