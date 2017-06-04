@@ -1,6 +1,6 @@
 json = require 'cjson'
 
-class BoshSSH
+class SSH
   new: (job, node) =>
     @job = job
     @node = node
@@ -15,9 +15,9 @@ class BoshSSH
     table.concat(stdout_lines, '\n')
 
   is_stdout_line: (line) =>
-    line\match(': stdout | ') ~= nil
+    line\find(': stdout | ') ~= nil
 
   make_command: (command) =>
     "bosh --json ssh #{@job}/#{@node} '#{command}'"
 
-{ :BoshSSH }
+{ :SSH }

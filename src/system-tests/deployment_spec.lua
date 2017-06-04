@@ -5,7 +5,7 @@ local bosh = require('bosh')
 
 describe('deployment', function()
   setup(function()
-    mongodb_ssh = bosh.BoshSSH('mongodb', 0)
+    mongodb_ssh = bosh.SSH('mongodb', 0)
     address = string.format('mongodb://%s:27017', get_deployment_ip())
   end)
 
