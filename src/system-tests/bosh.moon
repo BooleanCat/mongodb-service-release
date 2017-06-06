@@ -7,12 +7,15 @@ class SSH
 
   exec: (command) =>
       handler = io.popen(@make_command(command))
-      output = json.decode(handler\read('*a')).Blocks
-      @parse(output)
+      @parse(handler\read('*a'))
 
   parse: (output) =>
-    stdout_lines = [output[i+1] for i, line in ipairs output when @is_stdout_line(line)]
+    json_output = json.decode(output).Blocks
+    stdout_lines = [@trim(json_output[i+1]) for i, line in ipairs json_output when @is_stdout_line(line)]
     table.concat(stdout_lines, '\n')
+
+  trim: (s) =>
+    s\match('^%s*(.-)%s*$')
 
   is_stdout_line: (line) =>
     line\find(': stdout | ') ~= nil

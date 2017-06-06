@@ -1,0 +1,27 @@
+{
+    "Tables": null,
+    "Blocks": [
+        "mongodb/4e5d176e-003a-4b8b-a844-11540ae17c96: stderr | ",
+        "Unauthorized use is strictly prohibited. All access and activity",
+        "\n",
+        "mongodb/4e5d176e-003a-4b8b-a844-11540ae17c96: stderr | ",
+        "is subject to logging and monitoring.",
+        "\n",
+        "mongodb/4e5d176e-003a-4b8b-a844-11540ae17c96: stdout | ",
+        "foo\r",
+        "\n",
+        "mongodb/4e5d176e-003a-4b8b-a844-11540ae17c96: stdout | ",
+        "bar\r",
+        "\n",
+        "mongodb/4e5d176e-003a-4b8b-a844-11540ae17c96: stderr | ",
+        "Connection to 10.244.3.3 closed.\r",
+        "\n"
+    ],
+    "Lines": [
+        "Using environment 'http://192.168.50.4:25555' as client 'admin'",
+        "Using deployment 'mongodb-service'",
+        "Task 255",
+        ". Done",
+        "Succeeded"
+    ]
+}
