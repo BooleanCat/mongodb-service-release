@@ -20,7 +20,7 @@ releases:
 stemcells:
 - alias: default
   os: ubuntu-trusty
-  version: "3421.3"
+  version: "3541.2"
 
 update:
   canaries: 1
