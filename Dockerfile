@@ -1,4 +1,4 @@
-from ubuntu:zesty
+FROM ubuntu:xenial
 
 ENV DOCKER_ACTIVE true
 
